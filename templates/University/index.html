@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University</title>
+    <style>
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+
+        <table>
+    <tr>
+        <th>Tür</th>
+        <th>Üniversite</th>
+        <th>Fakülte</th>
+        <th>Bölüm</th>
+        <th>Puan</th>
+    </tr>
+    {% for i in universities %}
+    <tr>
+
+        <td>{{ i.type }}<br></td>
+        <td>{{ i.name }}<br></td>
+        <td>{{ i.faculty }}<br></td>
+        <td style="background-color: #5b5858"><a style="color: #f3eeee" href="{{ i.get_absolute_url }}">{{ i.department }}</a><br></td>
+        <td>{{ i.min_point }}<br></td>
+        {% endfor %}
+    </tr>
+</table>
+
+    <a style="color: green" href="/university/create">Create New</a>
+
+</body>
+</html>

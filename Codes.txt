@@ -1,0 +1,11 @@
+Virtual E. Activate = 		venv\Scripts\activate
+
+Start Project =			python manage.py runserver 
+
+Veritabanı Güncellemesi = 	python manage.py migrate
+
+Admin Tanımlama =  		python manage.py createsuperuser
+
+Yeni Uygumala Tanımlama = 	python manage.py startapp "uygulama ismi"
+
+Django Komut Satırı =  		python manage.py shell
