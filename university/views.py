@@ -18,7 +18,7 @@ def uni_detail(request, id):
         'uni' : university,
     }
 
-    return render(request, 'University\details.html', context)
+    return render(request, 'University/details.html', context)
 
 
 def uni_create(request):

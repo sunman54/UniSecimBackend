@@ -4,36 +4,62 @@
     <meta charset="UTF-8">
     <title>University</title>
     <style>
-table, th, td {
-  border: 2px solid black;
-  border-collapse: collapse;
-}
-</style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@trevoreyre/autocomplete-js/dist/style.css"
+    />
 </head>
 <body>
 
-
-        <table>
+    <div id="autocomplete" class="autocomplete">
+        <input class="autocomplete-input"/>
+        <ul class="autocomplete-result-list"></ul>
+    </div>
+<table>
     <tr>
-        <th>Tür</th>
-        <th>Üniversite</th>
-        <th>Fakülte</th>
-        <th>Bölüm</th>
-        <th>Puan</th>
+        <th>kod</th>
+        <th>type</th>
+        <th>name</th>
+        <th>faculty</th>
+        <th>department</th>
+        <th>point_type</th>
+        <th>quota</th>
+        <th>accepted</th>
+        <th>min_point</th>
+        <th>max_point</th>
+
+
     </tr>
     {% for i in universities %}
-    <tr>
+        <tr>
 
+        <td>{{ i.kod }}<br></td>
         <td>{{ i.type }}<br></td>
         <td>{{ i.name }}<br></td>
         <td>{{ i.faculty }}<br></td>
-        <td style="background-color: #5b5858"><a style="color: #f3eeee" href="{{ i.get_absolute_url }}">{{ i.department }}</a><br></td>
+        <td style="background-color: #5b5858"><a style="color: #f3eeee" href="{{ i.get_absolute_url }}">{{ i.department }}</a></td>
+        <td>{{ i.point_type }}<br></td>
+        <td>{{ i.quota }}<br></td>
+        <td>{{ i.accepted }}<br></td>
         <td>{{ i.min_point }}<br></td>
-        {% endfor %}
+        <td>{{ i.max_point }}<br></td>
+
+
+
+
+    {% endfor %}
     </tr>
 </table>
 
-    <a style="color: green" href="/university/create">Create New</a>
+<a style="color: green" href="/university/create">Create New</a>
+    <script>new Autocomplete('#autocomplete', options) </script>
+
+<script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
 
 </body>
 </html>

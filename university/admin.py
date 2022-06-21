@@ -9,7 +9,7 @@ class UniAdmin(admin.ModelAdmin):
     list_display=["department", "name", "point_type", "min_point" ]
     list_display_links = ["department"]
 
-    list_filter = ["department", "point_type"]
+    list_filter = ["department",  'name']
 
     search_fields = ["department", "name"]
 
